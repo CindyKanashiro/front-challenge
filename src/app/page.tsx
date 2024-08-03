@@ -13,7 +13,6 @@ const Home: React.FC = () => {
   const [currentPath, setCurrentPath] = useState("");
 
   useEffect(() => {
-    // Verifique se estamos no lado do cliente antes de acessar window
     if (typeof window !== "undefined") {
       setCurrentPath(window.location.pathname);
 
