@@ -1,0 +1,153 @@
+.mainContent {
+  padding: 20px;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative; 
+  z-index: 1; 
+}
+
+.intro {
+  text-align: left;
+  margin-bottom: 60px;
+  background: transparent;
+  margin-top: 120px;
+  margin-left: 60px;
+}
+
+.intro h1 {
+  font-size: 35px;
+  color: #ffffff;
+  margin-bottom: 7px;
+  font-weight: 200;
+}
+
+.intro p {
+  font-size: 29px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.searchBar input {
+  padding: 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px 0px 0px 8px;
+  width: 510px;
+  height: 50px;
+  border: solid #fff 1px;
+  background-color: transparent;
+}
+
+.searchBar button {
+  padding: 16px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0px 8px 8px 0px;
+  background-color: rgba(55, 160, 95, 255);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
+.card {
+  background-color: rgb(19, 30, 40);
+  border-radius: 30px;
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  height: 600px;
+  text-align: left;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+}
+
+.cardIcon {
+  position: absolute;
+  left: 20px;
+  background-color: #ffc107;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 16px;
+  color: #bbbbbb;
+  margin: 10px 0;
+}
+
+.card .subheading {
+  font-size: 14px;
+  color: #7cc39c;
+  margin: 70px 0 10px 0;
+}
+
+.cardButtons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: auto;
+}
+
+.cardButtons button {
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid rgba(55, 160, 95, 255);
+  border-radius: 8px;
+  background-color: transparent;
+  color: rgba(55, 160, 95, 255);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+}
+
+.cardButtons button.disabled {
+  border-color: #777;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.cardButtons button:hover:not(.disabled) {
+  background-color: transparent;
+  color: #A9FFC6;
+  border: 2px solid #A9FFC6;
+}
+
+.cardButtons button:active:not(.disabled) {
+  background-color: rgba(55, 160, 95, 255);
+  color: #ffffff;
+  border: 2px solid rgba(55, 160, 95, 255);
+  transform: scale(0.95);
+}
+
+.cardButtons button:last-child {
+  margin-right: 0;
+}

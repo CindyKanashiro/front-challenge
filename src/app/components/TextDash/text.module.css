@@ -1,0 +1,18 @@
+.textArea {
+    padding: 60px 0px 0px 100px;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .textArea p {
+    margin: 0;
+  }
+  
+  .textArea a {
+    color: rgba(55, 160, 95, 255);
+    text-decoration: none;
+  }
+  
+  
