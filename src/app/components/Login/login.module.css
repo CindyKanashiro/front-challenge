@@ -30,8 +30,8 @@
 
 .loginButton:hover {
   background-color: transparent;
-  color: #A9FFC6;
-  border: 2px solid #A9FFC6;
+  color: #a9ffc6;
+  border: 2px solid #a9ffc6;
 }
 
 .loginButton:active {

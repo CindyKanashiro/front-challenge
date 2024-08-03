@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative; 
-  z-index: 1; 
+  position: relative;
+  z-index: 1;
 }
 
 .intro {
@@ -75,7 +75,7 @@
   height: 600px;
   text-align: left;
   position: relative;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: unset;
@@ -137,8 +137,8 @@
 
 .cardButtons button:hover:not(.disabled) {
   background-color: transparent;
-  color: #A9FFC6;
-  border: 2px solid #A9FFC6;
+  color: #a9ffc6;
+  border: 2px solid #a9ffc6;
 }
 
 .cardButtons button:active:not(.disabled) {

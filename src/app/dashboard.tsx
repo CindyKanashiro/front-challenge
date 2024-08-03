@@ -7,9 +7,7 @@ import Background from "./components/Background/background";
 import Text from "./components/TextDash/text";
 
 const Dashboard: React.FC = () => {
-  const links = [
-    { href: "/", text: "início", id: "inicio-link" }
-  ];
+  const links = [{ href: "/", text: "início", id: "inicio-link" }];
 
   return (
     <div className={styles.container}>
@@ -21,4 +19,3 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
-

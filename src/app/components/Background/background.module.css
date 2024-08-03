@@ -9,7 +9,7 @@
   left: 50%;
   width: 1000px;
   height: 1000px;
-  background: rgba(19,40,49,255);
+  background: rgba(19, 40, 49, 255);
   transform: translate(-50%, -50%);
   filter: blur(200px);
   border-radius: 50%;

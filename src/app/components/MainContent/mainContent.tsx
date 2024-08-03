@@ -36,7 +36,9 @@ const MainContent: React.FC<MainContentProps> = ({ navigateTo }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<ApiResponse>("http://localhost:3333/bff");
+        const response = await axios.get<ApiResponse>(
+          "http://localhost:3333/bff"
+        );
         if (response.data) {
           const { title, subtitle, products } = response.data;
           setTitle(title);
@@ -76,7 +78,10 @@ const MainContent: React.FC<MainContentProps> = ({ navigateTo }) => {
         <h1>{title}</h1>
         <p>{subtitle}</p>
         <div className={styles.searchBar}>
-          <input type="text" placeholder="Informe o nome do dashboard que deseja" />
+          <input
+            type="text"
+            placeholder="Informe o nome do dashboard que deseja"
+          />
           <button>Buscar</button>
         </div>
       </section>
@@ -91,9 +96,12 @@ const MainContent: React.FC<MainContentProps> = ({ navigateTo }) => {
               {product.dashboards.map((dashboard) => (
                 <button
                   key={dashboard.id}
-                  onClick={() => handleButtonClick(product.title, dashboard.name)}
+                  onClick={() =>
+                    handleButtonClick(product.title, dashboard.name)
+                  }
                   className={
-                    product.title === "canais digitais" && dashboard.name === "buscas"
+                    product.title === "canais digitais" &&
+                    dashboard.name === "buscas"
                       ? ""
                       : styles.disabled
                   }
