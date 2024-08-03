@@ -10,23 +10,30 @@ import Login from "./components/Login/login";
 import Footer from "./components/Footer/footer";
 
 const Home: React.FC = () => {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState("");
 
   useEffect(() => {
-    const handlePopState = () => {
+    // Verifique se estamos no lado do cliente antes de acessar window
+    if (typeof window !== "undefined") {
       setCurrentPath(window.location.pathname);
-    };
 
-    window.addEventListener("popstate", handlePopState);
+      const handlePopState = () => {
+        setCurrentPath(window.location.pathname);
+      };
 
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
+      window.addEventListener("popstate", handlePopState);
+
+      return () => {
+        window.removeEventListener("popstate", handlePopState);
+      };
+    }
   }, []);
 
   const navigateTo = (path: string) => {
-    window.history.pushState({}, "", path);
-    setCurrentPath(path);
+    if (typeof window !== "undefined") {
+      window.history.pushState({}, "", path);
+      setCurrentPath(path);
+    }
   };
 
   const links = [

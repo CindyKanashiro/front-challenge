@@ -18,24 +18,28 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [isDashboard, setIsDashboard] = useState(false);
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      setIsDashboard(window.location.pathname === "/dashboard");
-    };
+    if (typeof window !== "undefined") {
+      const handleRouteChange = () => {
+        setIsDashboard(window.location.pathname === "/dashboard");
+      };
 
-    window.addEventListener("popstate", handleRouteChange);
-    handleRouteChange(); 
+      window.addEventListener("popstate", handleRouteChange);
+      handleRouteChange(); 
 
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-    };
+      return () => {
+        window.removeEventListener("popstate", handleRouteChange);
+      };
+    }
   }, []);
 
   useEffect(() => {
-    const inicioLink = document.getElementById("inicio-link");
-    if (window.location.pathname === "/") {
-      inicioLink?.classList.add(styles.active);
-    } else {
-      inicioLink?.classList.remove(styles.active);
+    if (typeof window !== "undefined") {
+      const inicioLink = document.getElementById("inicio-link");
+      if (window.location.pathname === "/") {
+        inicioLink?.classList.add(styles.active);
+      } else {
+        inicioLink?.classList.remove(styles.active);
+      }
     }
   }, []);
 
@@ -45,9 +49,11 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
 
   const handleNavigation = (href: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    window.history.pushState({}, '', href);
-    const navEvent = new PopStateEvent('popstate');
-    window.dispatchEvent(navEvent);
+    if (typeof window !== "undefined") {
+      window.history.pushState({}, '', href);
+      const navEvent = new PopStateEvent('popstate');
+      window.dispatchEvent(navEvent);
+    }
   };
 
   return (
